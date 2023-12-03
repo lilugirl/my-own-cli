@@ -2,6 +2,7 @@
 
 const { program } = require("commander");
 const { version } = require("./package.json");
+const handleInfo =require('./actions/info');
 
 program.version(version, "-v, --version", "输出当前版本号");
 program.option("-h, --help", "输出帮助信息");
@@ -20,7 +21,7 @@ program
 program
   .command("info")
   .description("展示项目详情")
-  .action(async (source, destination) => {});
+  .action(handleInfo);
 
 program
    .command('config <配置文件>')
