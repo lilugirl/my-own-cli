@@ -3,6 +3,7 @@
 const { program } = require("commander");
 const { version } = require("./package.json");
 const handleInfo =require('./actions/info');
+const handleInit =require('./actions/init')
 
 program.version(version, "-v, --version", "输出当前版本号");
 program.option("-h, --help", "输出帮助信息");
@@ -11,7 +12,7 @@ program
   .command("init <项目名称>")
   .alias("i")
   .description("初始化项目")
-  .action(async (source, destination) => {});
+  .action(handleInit);
 
 program
   .command("start")
